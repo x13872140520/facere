@@ -1,15 +1,21 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+  
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-
+import 'babel-polyfill';
 export default {
   name: 'app',
+  mounted(){
+    console.log('mounted');
+    console.log(this);
+    
+  },
   components: {
     HelloWorld
   }
@@ -21,8 +27,30 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  background:#18A689;
   color: #2c3e50;
-  margin-top: 60px;
+  height: 1000px;
+}
+#app .page-title{
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+}
+#app .page-title >div{
+  font-size:30px;
+  margin-right:30px
+
+}
+#app .page-title >span{
+  font-size:14px;
+  height:30px;
+  line-height:30px;
+  padding:0 5px;
+  background:#18A689;
+  border:1px solid #ffffff;
+}
+#app .page-title .active{
+  background:#007651;
 }
 </style>
